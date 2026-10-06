@@ -1,0 +1,48 @@
+GIT + GITHUB PR CHEAT SHEET
+===========================
+
+This file arrived through a pull request. The steps below are the ones
+that were used to add it.
+
+1. Get the repo
+   gh repo clone SussiBoiCode/22-project
+   cd 22-project
+
+2. Make a branch (never work directly on main)
+   git checkout -b add-learning-notes
+
+3. Change something, then look at what changed
+   git status          -> which files changed
+   git diff            -> the exact lines that changed
+
+4. Save a snapshot (a commit)
+   git add notes.txt
+   git commit -m "Add learning notes"
+
+5. Send the branch to GitHub
+   git push -u origin add-learning-notes
+
+6. Open a pull request (asks to merge the branch into main)
+   gh pr create --title "..." --body "..."
+   (or press the green "Compare & pull request" button on GitHub)
+
+7. Merge it, then clean up
+   gh pr merge --squash --delete-branch
+   git checkout main
+   git pull
+
+WORDS TO KNOW
+-------------
+repo      the project folder plus its whole history
+commit    a saved snapshot, with a message saying what changed
+branch    a separate line of commits, so main stays safe while you work
+push      upload your commits to GitHub
+pull      download new commits from GitHub
+PR        "please merge my branch into main"; a place to review the diff
+squash    merge all of a PR's commits into main as one tidy commit
+
+TRY IT YOURSELF
+---------------
+Add a line below in your own branch, open a PR, and merge it.
+
+-
