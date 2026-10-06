@@ -40,6 +40,24 @@ push      upload your commits to GitHub
 pull      download new commits from GitHub
 PR        "please merge my branch into main"; a place to review the diff
 squash    merge all of a PR's commits into main as one tidy commit
+issue     a to-do, bug report, or idea, tracked on GitHub with a number
+
+ISSUES
+------
+An issue is a numbered note on GitHub saying "this needs doing".
+Work usually goes: issue -> branch -> PR -> merge -> issue closes.
+
+   gh issue create --title "..." --body "..."   -> open one
+   gh issue list                                -> see open ones
+   gh issue view 4                              -> read issue #4
+   gh issue close 4                             -> close it by hand
+
+The trick: write "Closes #4" in a PR description. When that PR is
+merged, GitHub closes issue #4 by itself and links the two together.
+("Fixes #4" and "Resolves #4" work too.)
+
+Labels like "bug" or "documentation" sort issues into groups:
+   gh issue create --label documentation ...
 
 TRY IT YOURSELF
 ---------------
